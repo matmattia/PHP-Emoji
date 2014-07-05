@@ -4,8 +4,8 @@
  * 
  * @name emoji.class.php
  * @author Mattia - http://www.matriz.it
- * @version 1.0.1
- * @date June 26, 2014
+ * @version 1.0.2
+ * @date July 5, 2014
  * @category PHP Class
  * @copyright (c) 2014 Mattia at Matriz.it (info@matriz.it)
  * @license MIT - http://opensource.org/licenses/mit-license.php
@@ -27,6 +27,39 @@ class Emoji {
 	public function __construct() {
 		// By: http://apps.timwhitlock.info/emoji/tables/unicode
 		$this->unicode = array(
+			'0023+20E3' => 'hash',
+			'0030+20E3' => 'zero',
+			'0031+20E3' => 'one',
+			'0032+20E3' => 'two',
+			'0033+20E3' => 'three',
+			'0034+20E3' => 'four',
+			'0035+20E3' => 'five',
+			'0036+20E3' => 'six',
+			'0037+20E3' => 'seven',
+			'0038+20E3' => 'eight',
+			'0039+20E3' => 'nine',
+			'00A9' => 'copyright',
+			'00AE' => 'registered',
+			'203C' => 'bangbang',
+			'2049' => 'interrobang',
+			'2122' => 'tm',
+			'2139' => 'information_source',
+			'2194' => 'left_right_arrow',
+			'2195' => 'arrow_up_down',
+			'2196' => 'arrow_upper_left',
+			'2197' => 'arrow_upper_right',
+			'2198' => 'arrow_lower_right',
+			'2199' => 'arrow_lower_left',
+			'21A9' => 'leftwards_arrow_with_hook',
+			'21AA' => 'arrow_right_hook',
+			'231A' => 'watch',
+			'231B' => 'hourglass',
+			'23E9' => 'fast_forward',
+			'23EA' => 'rewind',
+			'23EB' => 'arrow_double_up',
+			'23EC' => 'arrow_double_down',
+			'23F0' => 'alarm_clock',
+			'23F3' => 'hourglass_flowing_sand',
 			'24C2' => 'm',
 			'2702' => 'scissors',
 			'2705' => 'white_check_mark',
@@ -99,6 +132,7 @@ class Emoji {
 			'1F341' => 'maple_leaf',
 			'1F342' => 'fallen_leaf',
 			'1F383' => 'jack_o_lantern',
+			'1F386' => 'fireworks',
 			'1F601' => 'grin',
 			'1F602' => 'joy',
 			'1F603' => 'smiley',
