@@ -136,6 +136,7 @@ class Emoji {
 			'1F386' => 'fireworks',
 			'1F388' => 'balloon',
 			'1F389' => 'tada',
+			'1F3B6' => 'notes',
 			'1F46C' => 'two_men_holding_hands',
 			'1F479' => 'japanese_ogre',
 			'1F47D' => 'alien',
