@@ -4,7 +4,7 @@
  * 
  * @name emoji.class.php
  * @author Mattia - http://www.matriz.it
- * @version 1.0.3
+ * @version 1.0.2
  * @date May 6, 2015
  * @category PHP Class
  * @copyright (c) 2014 Mattia at Matriz.it (info@matriz.it)
