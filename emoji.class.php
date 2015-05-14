@@ -4,8 +4,8 @@
  * 
  * @name emoji.class.php
  * @author Mattia - http://www.matriz.it
- * @version 1.0.2
- * @date May 6, 2015
+ * @version 1.1.0
+ * @date May 14, 2015
  * @category PHP Class
  * @copyright (c) 2014 Mattia at Matriz.it (info@matriz.it)
  * @license MIT - http://opensource.org/licenses/mit-license.php
@@ -15,14 +15,14 @@
 class Emoji {
 	/**
 	 * Lista degli emoji in base all'Unicode
-	 * @private
+	 * @access private
 	 * @var array
 	 */
 	private $unicode = array();
 	
  	/**
 	 * Costruttore della classe
-	 * @public
+	 * @access public
 	 */
 	public function __construct() {
 		// By: http://apps.timwhitlock.info/emoji/tables/unicode
@@ -71,7 +71,7 @@ class Emoji {
 			'25FE' => 'black_medium_small_square',
 			'2600' => 'sunny',
 			'2601' => 'cloud',
-			'260E' => 'phone',
+			'260E' => array('phone', 'telephone'),
 			'2611' => 'ballot_box_with_check',
 			'2614' => 'umbrella',
 			'2615' => 'coffee',
@@ -141,6 +141,21 @@ class Emoji {
 			'2797' => 'heavy_division_sign',
 			'27A1' => 'arrow_right',
 			'27B0' => 'curly_loop',
+			'2934' => 'arrow_heading_up',
+			'2935' => 'arrow_heading_down',
+			'2B05' => 'arrow_left',
+			'2B06' => 'arrow_up',
+			'2B07' => 'arrow_down',
+			'2B1B' => 'black_large_square',
+			'2B1C' => 'white_large_square',
+			'2B50' => 'star',
+			'2B55' => 'o',
+			'3030' => 'wavy_dash',
+			'303D' => 'part_alternation_mark',
+			'3297' => 'congratulations',
+			'3299' => 'secret',
+			'1F004' => 'mahjong',
+			'1F0CF' => 'black_joker',
 			'1F170' => 'a',
 			'1F171' => 'b',
 			'1F17E' => 'o2',
@@ -181,22 +196,162 @@ class Emoji {
 			'1F23A' => 'u55b6',
 			'1F250' => 'ideograph_advantage',
 			'1F251' => 'accept',
+			'1F300' => 'cyclone',
+			'1F301' => 'foggy',
+			'1F302' => 'closed_umbrella',
+			'1F303' => '',
+			'1F304' => 'sunrise_over_mountains',
+			'1F305' => 'sunrise',
+			'1F306' => 'city_sunset',
+			'1F307' => 'city_sunrise',
+			'1F308' => 'rainbow',
+			'1F309' => 'bridge_at_night',
+			'1F30A' => 'ocean',
+			'1F30B' => 'volcano',
+			'1F30C' => 'milky_way',
+			'1F30F' => 'earth_asia',
+			'1F311' => 'new_moon',
+			'1F313' => 'first_quarter_moon',
+			'1F314' => 'waxing_gibbous_moon',
+			'1F315' => 'full_moon',
+			'1F319' => 'crescent_moon',
+			'1F31B' => 'first_quarter_moon_with_face',
+			'1F31F' => 'star2',
+			'1F320' => 'stars',
+			'1F330' => 'chestnut',
+			'1F331' => 'seedling',
+			'1F334' => 'palm_tree',
+			'1F335' => 'cactus',
+			'1F337' => 'tulip',
+			'1F338' => 'cherry_blossom',
+			'1F339' => 'rose',
+			'1F33A' => 'hibiscus',
+			'1F33B' => 'sunflower',
+			'1F33C' => 'blossom',
+			'1F33D' => 'corn',
+			'1F33E' => 'ear_of_rice',
+			'1F33F' => 'herb',
+			'1F340' => 'four_leaf_clover',
 			'1F341' => 'maple_leaf',
 			'1F342' => 'fallen_leaf',
+			'1F343' => 'leaves',
+			'1F344' => 'mushroom',
+			'1F345' => 'tomato',
+			'1F346' => 'eggplant',
+			'1F347' => 'grapes',
+			'1F348' => 'melon',
+			'1F349' => 'watermelon',
+			'1F34A' => 'tangerine',
+			'1F34C' => 'banana',
+			'1F34D' => 'pineapple',
+			'1F34E' => 'apple',
+			'1F34F' => 'green_apple',
+			'1F351' => 'peach',
+			'1F352' => 'cherries',
+			'1F353' => 'strawberry',
+			'1F354' => 'hamburger',
+			'1F355' => 'pizza',
+			'1F356' => 'meat_on_bone',
+			'1F357' => 'poultry_leg',
+			'1F358' => 'rice_cracker',
+			'1F359' => 'rice_ball',
+			'1F35A' => 'rice',
+			'1F35B' => 'curry',
+			'1F35C' => 'ramen',
+			'1F35D' => 'spaghetti',
+			'1F35E' => 'bread',
+			'1F35F' => 'fries',
+			'1F360' => 'sweet_potato',
+			'1F361' => 'dango',
+			'1F362' => 'oden',
+			'1F363' => 'sushi',
+			'1F364' => 'fried_shrimp',
+			'1F365' => 'fish_cake',
+			'1F366' => 'icecream',
+			'1F367' => 'shaved_ice',
+			'1F368' => 'ice_cream',
+			'1F369' => 'doughnut',
+			'1F36A' => 'cookie',
+			'1F36B' => 'chocolate_bar',
+			'1F36C' => 'candy',
+			'1F36D' => 'lollipop',
+			'1F36E' => 'custard',
+			'1F36F' => 'honey_pot',
+			'1F370' => 'cake',
+			'1F371' => 'bento',
+			'1F372' => 'stew',
+			'1F373' => 'egg',
+			'1F374' => 'fork_and_knife',
+			'1F375' => 'tea',
+			'1F376' => 'sake',
+			'1F377' => 'wine_glass',
+			'1F378' => 'cocktail',
+			'1F379' => 'tropical_drink',
+			'1F37A' => 'beer',
+			'1F37B' => 'beers',
+			'1F380' => 'ribbon',
+			'1F381' => 'gift',
 			'1F382' => 'birthday',
 			'1F383' => 'jack_o_lantern',
+			'1F384' => 'christmas_tree',
+			'1F385' => 'santa',
 			'1F386' => 'fireworks',
+			'1F387' => 'sparkler',
 			'1F388' => 'balloon',
 			'1F389' => 'tada',
+			'1F38A' => 'confetti_ball',
+			'1F38B' => 'tanabata_tree',
+			'1F38C' => 'crossed_flags',
+			'1F38D' => 'bamboo',
+			'1F38E' => 'dolls',
+			'1F38F' => 'flags',
+			'1F390' => 'wind_chime',
+			'1F391' => 'rice_scene',
+			'1F392' => 'school_satchel',
+			'1F393' => 'mortar_board',
+			'1F3A0' => 'carousel_horse',
+			'1F3A1' => 'ferris_wheel',
+			'1F3A2' => 'roller_coaster',
+			'1F3A3' => 'fishing_pole_and_fish',
+			'1F3A4' => 'microphone',
+			'1F3A5' => 'movie_camera',
+			'1F3A6' => 'cinema',
+			'1F3A7' => 'headphones',
+			'1F3A8' => 'art',
+			'1F3A9' => 'tophat',
+			'1F3AA' => 'circus_tent',
+			'1F3AB' => 'ticket',
+			'1F3AC' => 'clapper',
+			'1F3AD' => 'performing_arts',
+			'1F3AE' => 'video_game',
+			'1F3AF' => 'dart',
+			'1F3B0' => 'slot_machine',
+			'1F3B1' => '8ball',
+			'1F3B2' => 'game_die',
+			'1F3B3' => 'bowling',
+			'1F3B4' => 'flower_playing_cards',
+			'1F3B5' => 'musical_note',
 			'1F3B6' => 'notes',
+			'1F3B7' => 'saxophone',
+			'1F3B8' => 'guitar',
+			'1F3B9' => 'musical_keyboard',
+			'1F3BA' => 'trumpet',
+			'1F3BB' => 'violin',
+			'1F3BC' => 'musical_score',
+			
 			'1F445' => 'tongue',
+			'1F44A' => array('punch', 'facepunch'),
 			'1F44F' => 'clap',
 			'1F46C' => 'two_men_holding_hands',
 			'1F479' => 'japanese_ogre',
 			'1F47D' => 'alien',
 			'1F480' => 'skull',
+			'1F48A' => 'pill',
+			'1F4B0' => 'moneybag',
 			'1F4F7' => 'camera',
 			'1F50A' => 'speaker',
+			'1F525' => 'fire',
+			'1F52B' => 'gun',
 			'1F601' => 'grin',
 			'1F602' => 'joy',
 			'1F603' => 'smiley',
@@ -292,11 +447,34 @@ class Emoji {
 			'1F6C0' => 'bath',
 		);
 	}
-	 
+	
+	/**
+	 * Restituisce la lista degli emoji in base al nome
+	 * @access private
+	 * @return array
+	 */
+	private function getListByNames() {
+		static $list = null;
+		if (!is_array($list)) {
+			$list = array();
+			foreach ($this->unicode as $k => $v) {
+				$v = is_array($v) ? array_values($v) : array($v);
+				$counter = count($v);
+				for ($i = 0; $i < $counter; $i++) {
+					if (!isset($list[$v[$i]])) {
+						$list[$v[$i]] = $k;
+					}
+				}
+				unset($i, $counter, $k, $v);
+			}
+		}
+		return $list;
+	}
+	
 	/**
 	 * Restituisce il codice HTML dell'emoji in base al nome
 	 * @see http://www.emoji-cheat-sheet.com/
-	 * @public
+	 * @access public
 	 * @param string $name nome dell'emoji
 	 * @return string
 	 */
@@ -304,18 +482,67 @@ class Emoji {
 		$html = null;
 		if (is_string($name)) {
 			$name = trim($name, ':');
-			$k = array_search($name, $this->unicode);
-			if ($k !== false) {
-				$html = '';
-				$hex = explode('+', $k);
-				$counter = count($hex);
-				for ($i = 0; $i < $counter; $i++) {
-					$html .= '&#'.hexdec($hex[$i]).';';
+			if (trim($name) != '') {
+				$list = $this->getListByNames();
+				if (isset($list[$name])) {
+					$html = '';
+					$hex = explode('+', $list[$name]);
+					$counter = count($hex);
+					for ($i = 0; $i < $counter; $i++) {
+						$html .= '&#'.hexdec($hex[$i]).';';
+					}
+					unset($i, $counter, $hex);
 				}
-				unset($i, $counter, $hex);
+				unset($list);
 			}
-			unset($k);
 		}
 		return $html;
+	}
+	
+	/**
+	 * Sostituisce gli emoji in un testo con il relativo codice HTML in base al nome
+	 * @access public
+	 * @param string $text testo
+	 * @param string $before caratteri iniziali che delimitano un emoji
+	 * @param string $after caratteri finali che delimitano un emoji
+	 * @return string
+	 */
+	public function textToHtml($text, $before = ':', $after = ':') {
+		if (is_scalar($text)) {
+			if (!is_scalar($before)) {
+				$before = '';
+			}
+			if (!is_scalar($after)) {
+				$after = '';
+			}
+			$text = preg_replace_callback(
+				'/'.preg_quote($before, '/').'([a-z0-9_]+)'.preg_quote($after, '/').'/s',
+				array($this, 'textToHtmlCallback'),
+				$text
+			);
+		} else {
+			$text = null;
+		}
+		return $text;
+	}
+	
+	/**
+	 * Callback dell'espressione regolare per sostituire gli emoji in un testo con il relativo codice HTML in base al nome
+	 * @see Emoji::textToHtml()
+	 * @access private
+	 * @param array $matches risultati dell'espressione regolare
+	 * @return string
+	 */
+	private function textToHtmlCallback($matches) {
+		$text = null;
+		if (is_array($matches)) {
+			if (isset($matches[1])) {
+				$text = $this->nameToHtml($matches[1]);
+			}
+			if (!$text && isset($matches[0]) && is_string($matches[0])) {
+				$text = $matches[0];
+			}
+		}
+		return $text;
 	}
 }
