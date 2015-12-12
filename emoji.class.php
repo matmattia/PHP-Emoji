@@ -358,6 +358,7 @@ class Emoji {
 			'1F604' => 'smile',
 			'1F605' => 'sweat_smile',
 			'1F606' => 'laughing',
+			'1F608' => 'smiling_imp',
 			'1F609' => 'wink',
 			'1F60A' => 'blush',
 			'1F60B' => 'yum',
