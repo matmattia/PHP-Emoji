@@ -4,8 +4,8 @@
  * 
  * @name emoji.class.php
  * @author Mattia - http://www.matriz.it
- * @version 2.0.0
- * @date January 9, 2016
+ * @version 2.1.0
+ * @date February 13, 2016
  * @category PHP Class
  * @copyright (c) 2014 Mattia at Matriz.it (info@matriz.it)
  * @license MIT - http://opensource.org/licenses/mit-license.php
@@ -57,7 +57,7 @@ class Emoji {
 	 * Restituisce il codice HTML dell'emoji in base al nome
 	 * @see http://www.emoji-cheat-sheet.com/
 	 * @access public
-	 * @param string $name nome dell'emoji
+	 * @param string $name nome dell'emoji o "U+" più valore esadecimale del carattere
 	 * @return string
 	 */
 	public function nameToHtml($name) {
@@ -72,6 +72,12 @@ class Emoji {
 					$html .= '&#'.hexdec($hex[$i]).';';
 				}
 				unset($i, $counter, $hex);
+			} else if (strlen($name) > 2 && substr($name, 0, 2) == 'U+') {
+				$hex = substr($name, 2);
+				if (!function_exists('ctype_xdigit') || ctype_xdigit($hex)) {
+					$html = '&#'.hexdec($hex).';';
+				}
+				unset($hex);
 			}
 		}
 		return $html;
