@@ -4,8 +4,8 @@
  * 
  * @name emoji.class.php
  * @author Mattia - http://www.matriz.it
- * @version 2.2.0
- * @date May 1, 2017
+ * @version 2.3.0
+ * @date November 4, 2017
  * @category PHP Class
  * @copyright (c) 2014-2017 Mattia at Matriz.it (info@matriz.it)
  * @license MIT - http://opensource.org/licenses/mit-license.php
@@ -126,6 +126,45 @@ class Emoji {
 			if (!$text && isset($matches[0]) && is_string($matches[0])) {
 				$text = $matches[0];
 			}
+		}
+		return $text;
+	}
+	
+	/**
+	 * Sostituisce gli emoji in un testo con il relativo nome
+	 * @access public
+	 * @param string $text testo
+	 * @param string $before caratteri iniziali che delimitano un emoji
+	 * @param string $after caratteri finali che delimitano un emoji
+	 * @return string
+	 */
+	public function emojisToNames($text, $before = ':', $after = ':') {
+		if (is_scalar($text)) {
+			if (!is_scalar($before)) {
+				$before = '';
+			}
+			if (!is_scalar($after)) {
+				$after = '';
+			}
+			$list = $this->getListByUnicode();
+			foreach ($list as $k => $v) {
+				$emoji = '';
+				$unicodes = explode('-', $k);
+				$counter = count($unicodes);
+				for ($i = 0; $i < $counter; $i++) {
+					$unicode = '0x'.$unicodes[$i];
+					if ($unicode > 0x10000) {
+						$emoji .= json_decode('"\u'.dechex((($unicode - 0x10000) >> 10) + 0xD800).'\u'.dechex((($unicode - 0x10000) % 0x400) + 0xDC00).'"');
+					} else {
+						$emoji .= json_decode('"\u'.$unicodes[$i].'"');
+					}
+					unset($unicode);
+				}
+				unset($i, $counter, $unicodes);
+				unset($k, $v);
+			}
+		} else {
+			$text = null;
 		}
 		return $text;
 	}
