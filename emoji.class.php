@@ -4,12 +4,12 @@
  * 
  * @name emoji.class.php
  * @author Mattia - http://www.matriz.it
- * @version 3.3.0
- * @date March 29, 2020
+ * @version 3.4.0
+ * @date May 28, 2023
  * @category PHP Class
- * @copyright (c) 2014-2020 Mattia at Matriz.it (info@matriz.it)
- * @license MIT - http://opensource.org/licenses/mit-license.php
- * @example Visit http://www.matriz.it/projects/php-emoji/ for more informations about this PHP class
+ * @copyright (c) 2014-2023 Mattia at Matriz.it (info@matriz.it)
+ * @license MIT - https://opensource.org/license/mit/
+ * @example Visit https://www.matriz.it/projects/php-emoji/ for more informations about this PHP class
  */
 
 class Emoji {
@@ -76,6 +76,64 @@ class Emoji {
 			}
 		}
 		return $list;
+	}
+	
+	/**
+	 * Restituisce l'emoji vera e propria in base al nome
+	 * @see http://www.emoji-cheat-sheet.com/
+	 * @access public
+	 * @param string $name nome dell'emoji o "U+" più valore esadecimale del carattere
+	 * @return string
+	 */
+	public function nameToEmoji($name) {
+		return mb_convert_encoding($this->nameToHtml($name), 'UTF-8', 'HTML-ENTITIES');
+	}
+	
+	/**
+	 * Sostituisce gli emoji in un testo con il relativo emoji vero e proprio in base al nome
+	 * @access public
+	 * @param string $text testo
+	 * @param string $before caratteri iniziali che delimitano un emoji
+	 * @param string $after caratteri finali che delimitano un emoji
+	 * @return string
+	 */
+	public function textToEmoji($text, $before = ':', $after = ':') {
+		if (is_scalar($text)) {
+			if (!is_scalar($before)) {
+				$before = '';
+			}
+			if (!is_scalar($after)) {
+				$after = '';
+			}
+			$text = preg_replace_callback(
+				'/'.preg_quote($before, '/').'([a-z0-9_+]+)'.preg_quote($after, '/').'/si',
+				array($this, 'textToEmojiCallback'),
+				$text
+			);
+		} else {
+			$text = null;
+		}
+		return $text;
+	}
+	
+	/**
+	 * Callback dell'espressione regolare per sostituire gli emoji in un testo con il relativo emoji vero e proprio in base al nome
+	 * @see Emoji::textToHtml()
+	 * @access private
+	 * @param array $matches risultati dell'espressione regolare
+	 * @return string
+	 */
+	private function textToEmojiCallback($matches) {
+		$text = null;
+		if (is_array($matches)) {
+			if (isset($matches[1])) {
+				$text = $this->nameToEmoji($matches[1]);
+			}
+			if (!$text && isset($matches[0]) && is_string($matches[0])) {
+				$text = $matches[0];
+			}
+		}
+		return $text;
 	}
 	
 	/**
