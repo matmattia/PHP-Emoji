@@ -4,10 +4,10 @@
  * 
  * @name emoji.class.php
  * @author Mattia - http://www.matriz.it
- * @version 3.4.0
- * @date May 28, 2023
+ * @version 3.3.1
+ * @date April 14, 2024
  * @category PHP Class
- * @copyright (c) 2014-2023 Mattia at Matriz.it (info@matriz.it)
+ * @copyright (c) 2014-2024 Mattia at Matriz.it (info@matriz.it)
  * @license MIT - https://opensource.org/license/mit/
  * @example Visit https://www.matriz.it/projects/php-emoji/ for more informations about this PHP class
  */

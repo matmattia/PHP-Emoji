@@ -15,5 +15,11 @@
 	},
 	"support": {
 		"issues": "https://github.com/matmattia/PHP-Emoji/issues"
-	}
+	},
+	"funding": [
+		{
+			"url": "https://www.paypal.com/donate/?hosted_button_id=MQVMRTV6PW4AQ",
+			"type": "paypal"
+		}
+	]
 }
