@@ -6,6 +6,10 @@ PHP Emoji is a class to manage emoji.
 
 [PHP Emoji - Matriz.it](http://www.matriz.it/projects/php-emoji/ "Matriz | Projects | PHP-Emoji")
 
+## License
+
+This class is licensed under the MIT license.
+
 ## Credits
 
 Mattia at [Matriz.it](http://www.matriz.it/) (info@matriz.it)
