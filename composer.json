@@ -1,7 +1,19 @@
 {
 	"name": "matmattia/php-emoji",
 	"description": "PHP Emoji is a class to manage emoji.",
+	"homepage": "https://www.matriz.it/projects/php-emoji/",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Mattia",
+			"email": "info@matriz.it",
+			"homepage": "https://www.matriz.it/"
+		}
+	],
 	"require": {
 		"php": ">=7.0"
+	},
+	"support": {
+		"issues": "https://github.com/matmattia/PHP-Emoji/issues"
 	}
 }
