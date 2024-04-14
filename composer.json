@@ -1,0 +1,7 @@
+{
+	"name": "matmattia/php-emoji",
+	"description": "PHP Emoji is a class to manage emoji.",
+	"require": {
+		"php": ">=7.0"
+	}
+}
