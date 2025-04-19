@@ -13,6 +13,9 @@
 	"require": {
 		"php": ">=7.0"
 	},
+	"autoload": {
+		"classmap": ["Emoji.php"]
+	},
 	"support": {
 		"issues": "https://github.com/matmattia/PHP-Emoji/issues"
 	},
